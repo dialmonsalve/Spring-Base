@@ -51,10 +51,10 @@ public class IndexController {
 	@ModelAttribute("usuarios")
 	public List<Usuario> listaUsuarios() {
 		
-		usuario.add(new Usuario("Diego", 40, "diales@gmail.es"));
-		usuario.add(new Usuario("Pedro", 28, "pepe@gmail.es"));
-		usuario.add(new Usuario("Alberto", 33, "albert@gmail.es"));
-		usuario.add(new Usuario("Josue", 20, "jos@gmail.es"));
+		usuario.add(new Usuario("Diego", "Monsalve", 40, "diales@gmail.es"));
+		usuario.add(new Usuario("Pedro", "Perez", 28, "pepe@gmail.es"));
+		usuario.add(new Usuario("Alberto", "Alvarez", 33, "albert@gmail.es"));
+		usuario.add(new Usuario("Josue", "Rosado" , 20, "jos@gmail.es"));
 		
 		return usuario;
 	}
