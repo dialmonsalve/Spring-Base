@@ -4,11 +4,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Usuario {
-	
+
 	public Usuario() {
-		
+
 	}
-	
+
 	public Usuario(String nombre, String apellido, Integer edad, String email) {
 
 		this.nombre = nombre;
@@ -16,7 +16,7 @@ public class Usuario {
 		this.edad = edad;
 		this.email = email;
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -24,15 +24,16 @@ public class Usuario {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	public String getApellido(){
+
+	public String getApellido() {
 		return apellido;
 	}
-	
+
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
-		
+
 	}
+
 	public Integer getEdad() {
 		return edad;
 	}
@@ -48,7 +49,7 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	private String nombre;
 	private String apellido;
 	private Integer edad;
