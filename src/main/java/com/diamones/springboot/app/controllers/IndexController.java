@@ -1,30 +1,14 @@
 package com.diamones.springboot.app.controllers;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.diamones.springboot.app.models.Factura;
-import com.diamones.springboot.app.models.Usuario;
 
 @Controller
 public class IndexController {
-	
-	public IndexController() {
-
-	}
-	
-	@Autowired
-	public IndexController(List<Usuario> usuario) {
-		this.usuario=usuario;
-	}
-	
+		
 	@RequestMapping({"/index","","/"})
 	public String index(Model model) {
 		
@@ -49,32 +33,6 @@ public class IndexController {
 		return "/variables";
 		
 	}
-	
-	@ModelAttribute("usuarios")
-	public List<Usuario> listaUsuarios() {
-		
-		usuario.add(new Usuario("Diego", "Monsalve", 40, "diales@gmail.es"));
-		usuario.add(new Usuario("Pedro", "Perez", 28, "pepe@gmail.es"));
-		usuario.add(new Usuario("Alberto", "Alvarez", 33, "albert@gmail.es"));
-		usuario.add(new Usuario("Josue", "Rosado" , 20, "jos@gmail.es"));
-		
-		return usuario;
-	}
-	
-	@GetMapping("/factura")
-	public String facturacion(Model model) {
-		
-		model.addAttribute("titulo", "Facturación");
-		
-		model.addAttribute("factura", "factura");
-		
-		return "/factura";
-	}
-
-	private List<Usuario> usuario;
-	
-	@Autowired
-	private Factura factura;
 
 
 }

@@ -1,24 +1,21 @@
 package com.diamones.springboot.app.models;
 
 public class ItemFactura {
+	
+	public ItemFactura(Producto producto, Integer cantidad) {
 
-	public ItemFactura() {
-
-	}
-
-	public ItemFactura(Integer id, Producto producto) {
-
-		this.id = id;
 		this.producto = producto;
+		this.cantidad = cantidad;
 	}
 
-	public Integer getId() {
-		return id;
+	public Integer getCantidad() {
+		return cantidad;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setCantidad(Integer cantidad) {
+		this.cantidad = cantidad;
 	}
+
 
 	public Producto getProducto() {
 		return producto;
@@ -28,8 +25,11 @@ public class ItemFactura {
 		this.producto = producto;
 	}
 	
+	public Double calcularImporte() {
+		return producto.getPrecio() * cantidad;
+	}
 
-	private Integer id;
 	private Producto producto;
+	private Integer cantidad;
 
 }

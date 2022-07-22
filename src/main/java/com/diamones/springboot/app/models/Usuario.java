@@ -1,21 +1,10 @@
 package com.diamones.springboot.app.models;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Usuario {
-
-	public Usuario() {
-
-	}
-
-	public Usuario(String nombre, String apellido, Integer edad, String email) {
-
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.edad = edad;
-		this.email = email;
-	}
 
 	public String getNombre() {
 		return nombre;
@@ -50,8 +39,13 @@ public class Usuario {
 		this.email = email;
 	}
 
+	@Value("${usuario.nombre}")
 	private String nombre;
+	
+	@Value("${usuario.apellido}")
 	private String apellido;
-	private Integer edad;
+	
+	@Value("${usuario.edad}")	private Integer edad;
+	@Value("${usuario.email}")
 	private String email;
 }

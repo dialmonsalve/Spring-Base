@@ -11,27 +11,24 @@
 
 	<h1 th:text="${titulo}"></h1>
 
-	<ul>
-		<li><a th:href="@{/segunda}">Pagina 2</a></li>
-		<li><a th:href="@{/variables}">Pagina 3</a></li>
-
-	</ul>
-
 	<table>
 		<thead>
 			<tr>
-				<th>Nombre</th>
-				<th>Edad</th>
-				<th>Correo</th>
+				<th>Producto</th>
+				<th>Precio</th>
+				<th>Cantidad</th>
+				<th>Total</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="usuario: ${usuarios}">
-				<td th:text="${usuario.nombre}"></td>
-				<td th:text="${usuario.edad}"></td>
-				<td th:text="${usuario.email}"></td>
+			<tr th:each="item: ${factura.items}">
+				<td th:text="${item.producto.descripcion}"></td>
+				<td th:text="${item.producto.precio}"></td>
+				<td th:text="${item.cantidad}"></td>
+				<td th:text="${item.calcularImporte()}"></td>
 			</tr>
 		</tbody>
 	</table>
+
 </body>
 </html>

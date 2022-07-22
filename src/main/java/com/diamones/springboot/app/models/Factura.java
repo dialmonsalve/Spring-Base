@@ -3,29 +3,18 @@ package com.diamones.springboot.app.models;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Factura {
 
-	public Factura() {
-
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public Factura(Integer consecutivo, Usuario usuario, List<ItemFactura> itmes, Double total) {
-
-		this.consecutivo = consecutivo;
-		this.usuario = usuario;
-		this.itmes = itmes;
-		this.total = total;
-	}
-
-	public Integer getConsecutivo() {
-		return consecutivo;
-	}
-
-	public void setConsecutivo(Integer consecutivo) {
-		this.consecutivo = consecutivo;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public Usuario getUsuario() {
@@ -36,30 +25,21 @@ public class Factura {
 		this.usuario = usuario;
 	}
 
-	public List<ItemFactura> getItmes() {
-		return itmes;
+	public List<ItemFactura> getItems() {
+		return items;
 	}
 
-	public void setItmes(List<ItemFactura> itmes) {
-		this.itmes = itmes;
-	}
-
-	public Double getTotal() {
-		return total;
-	}
-
-	public void setTotal(Double total) {
-		this.total = total;
+	public void setItems(List<ItemFactura> items) {
+		this.items = items;
 	}
 	
 	@Autowired
 	private Usuario usuario;
+	
+	@Value("${factura.descripcion}")
+	private String descripcion;
 
-	private Integer consecutivo;
-	
 	@Autowired
-	private List<ItemFactura> itmes;
-	
-	private Double total;
+	private List<ItemFactura> items;
 
 }
